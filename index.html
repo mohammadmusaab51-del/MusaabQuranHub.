@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MusaabQuranHub - Animated Premium</title>
+<style>
+/* Reset & general */
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Lato', sans-serif; }
+body { background:#f0f4f8; color:#003366; overflow-x:hidden; scroll-behavior:smooth; }
+
+/* Header */
+header { position:fixed; top:0; width:100%; z-index:1000; padding:20px 0; background:rgba(0,51,102,0.85); backdrop-filter:blur(10px); box-shadow:0 5px 15px rgba(0,0,0,0.3); animation: slideDown 1s forwards; }
+header h1 { text-align:center; color:#FFD700; font-size:2.2rem; letter-spacing:1px; }
+nav { text-align:center; margin-top:5px; }
+nav a { margin:0 20px; font-weight:600; color:white; transition:0.4s; }
+nav a:hover { transform:scale(1.1); color:#FFD700; }
+
+/* Parallax Hero Layers */
+.hero { position:relative; height:100vh; display:flex; justify-content:center; align-items:center; text-align:center; overflow:hidden; }
+.hero-layer { position:absolute; top:0; left:0; width:100%; height:100%; background-position:center; background-size:cover; }
+#layer1 { background:url('https://images.unsplash.com/photo-1609493319554-3388673560ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=90&w=1920') center/cover no-repeat; z-index:1; transform:translateZ(-1px) scale(2); filter:brightness(0.4); }
+#layer2 { background:url('https://images.unsplash.com/photo-1609835022055-92f1eeff4b11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=90&w=1920') center/cover no-repeat; z-index:2; opacity:0.5; }
+.hero-content { position:relative; z-index:3; color:white; max-width:900px; padding:0 20px; animation: fadeInUp 2s forwards; }
+.hero-content h2 { font-size:3.5rem; margin-bottom:20px; animation: fadeInDown 2s forwards 0.5s; }
+.hero-content p { font-size:1.5rem; margin-bottom:30px; }
+.hero-content a { display:inline-block; padding:18px 40px; font-weight:bold; border-radius:12px; background:linear-gradient(90deg,#FFD700,#FFC107); color:#003366; transition:0.5s; box-shadow:0 10px 25px rgba(0,0,0,0.3); }
+.hero-content a:hover { transform:scale(1.1); background:linear-gradient(90deg,#FFC107,#FFD700); }
+
+/* Sections */
+section { padding:120px 20px; max-width:1200px; margin:auto; opacity:0; transform:translateY(50px); transition:1s ease-out; }
+
+/* Glassmorphism Cards */
+.features, .pricing, .steps { display:flex; flex-wrap:wrap; gap:25px; justify-content:center; }
+.feature, .price-card, .step { background: rgba(255,255,255,0.2); backdrop-filter: blur(12px); border-radius:20px; padding:40px; flex:1 1 300px; max-width:350px; text-align:center; box-shadow:0 20px 50px rgba(0,0,0,0.2); transition:0.6s ease; animation: popIn 1.2s forwards; }
+.feature:hover, .price-card:hover, .step:hover { transform:translateY(-15px) scale(1.05); box-shadow:0 25px 60px rgba(0,0,0,0.3); }
+.price-card { background:linear-gradient(135deg,#FFD700,#FFC107); color:#003366; }
+.price-card:hover { background:linear-gradient(135deg,#FFC107,#FFD700); }
+.step { background:linear-gradient(135deg,#ADD8E6,#87CEEB); color:#003366; }
+.step:hover { background:linear-gradient(135deg,#87CEEB,#ADD8E6); }
+
+/* Testimonials */
+.testimonial { background: rgba(255,255,255,0.2); backdrop-filter:blur(12px); padding:30px; border-radius:20px; margin:15px; box-shadow:0 15px 50px rgba(0,0,0,0.2); display:none; animation: fadeIn 1s forwards; }
+
+/* Contact */
+.contact { background:#F5F5DC; text-align:center; padding:80px 20px; border-radius:20px; }
+.contact p { font-size:1.2rem; margin:10px 0; }
+
+/* Floating WhatsApp */
+.whatsapp-float { position:fixed; bottom:25px; right:25px; z-index:100; animation: floatBounce 2s infinite; }
+.whatsapp-float img { width:70px; height:70px; transition:0.4s; }
+.whatsapp-float:hover { transform:scale(1.2); }
+
+/* Footer */
+footer { text-align:center; padding:30px; background:#003366; color:white; font-size:1rem; letter-spacing:0.5px; }
+
+/* Animations */
+@keyframes slideDown { from{transform:translateY(-100%);} to{transform:translateY(0);} }
+@keyframes fadeInUp { from{opacity:0; transform:translateY(50px);} to{opacity:1; transform:translateY(0);} }
+@keyframes fadeInDown { from{opacity:0; transform:translateY(-50px);} to{opacity:1; transform:translateY(0);} }
+@keyframes popIn { from{opacity:0; transform:scale(0);} to{opacity:1; transform:scale(1);} }
+@keyframes floatBounce { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-15px);} }
+@keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+
+@media(max-width:768px){ .features,.steps,.pricing{ flex-direction:column; } .hero-content h2{ font-size:2.5rem; } .hero-content p{ font-size:1.2rem; } }
+</style>
+</head>
+<body>
+
+<header>
+<h1>MusaabQuranHub</h1>
+<nav>
+<a href="#courses">Courses</a>
+<a href="#pricing">Pricing</a>
+<a href="#how-it-works">How It Works</a>
+<a href="#testimonials">Testimonials</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<div id="layer1" class="hero-layer"></div>
+<div id="layer2" class="hero-layer"></div>
+<div class="hero-content">
+<h2>السلام علیکم</h2>
+<p>Learn Quran-e-Karim with Tajweed Online - One-to-One Live Classes</p>
+<a href="https://wa.me/93785686650" target="_blank">Book Free Trial</a>
+</div>
+</section>
+
+<section id="courses">
+<h2 class="section-title">Why Choose MusaabQuranHub?</h2>
+<div class="features">
+<div class="feature"><h3>⏱ Duration</h3><p>30 minutes daily</p></div>
+<div class="feature"><h3>📆 Days</h3><p>Monday to Friday</p></div>
+<div class="feature"><h3>💻 Platform</h3><p>Zoom / Google Meet</p></div>
+<div class="feature"><h3>Languages</h3><p>Dari & English</p></div>
+<div class="feature"><h3>For</h3><p>Children & Adults</p></div>
+</div>
+</section>
+
+<section id="pricing">
+<h2 class="section-title">Our Pricing</h2>
+<div class="pricing">
+<div class="price-card"><h3>Hafiz / Hafiz Quran</h3><p>$40 per month</p></div>
+<div class="price-card"><h3>Reading from OpenTheQuran</h3><p>$30 per month</p></div>
+</div>
+</section>
+
+<section id="how-it-works">
+<h2 class="section-title">How It Works</h2>
+<div class="steps">
+<div class="step"><h3>1. Book Free Trial</h3><p>Contact via WhatsApp or Email</p></div>
+<div class="step"><h3>2. Start Learning</h3><p>One-to-one live sessions</p></div>
+<div class="step"><h3>3. Progress</h3><p>Regular feedback & Tajweed improvement</p></div>
+</div>
+</section>
+
+<section id="testimonials">
+<h2 class="section-title">What Students Say</h2>
+<div class="testimonial"><p>“Musaab sir is very patient and teaches Tajweed clearly.”</p><h4>- Parent A</h4></div>
+<div class="testimonial"><p>“Excellent one-to-one sessions. My Tajweed improved a lot!”</p><h4>- Student B</h4></div>
+</section>
+
+<section id="contact" class="contact">
+<h2 class="section-title">Contact / Book Free Trial</h2>
+<p>📱 WhatsApp: <a href="https://wa.me/93785686650" target="_blank">0785686650</a></p>
+<p>✉️ Email: <a href="mailto:mohammadmusaab51@gmail.com">mohammadmusaab51@gmail.com</a></p>
+<p>Reach out to book your session!</p>
+</section>
+
+<a href="https://wa.me/93785686650" class="whatsapp-float" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+<footer>
+<p>© 2025 MusaabQuranHub | All Rights Reserved</p>
+</footer>
+
+<script>
+// Scroll fade-in
+function fadeInSections() {
+document.querySelectorAll('section').forEach(sec => {
+const top = sec.getBoundingClientRect().top;
+if(top < window.innerHeight - 100){ sec.style.opacity=1; sec.style.transform='translateY(0)'; }
+});
+}
+window.addEventListener('scroll', fadeInSections);
+window.addEventListener('load', fadeInSections);
+
+// Smooth scrolling
+document.querySelectorAll('nav a').forEach(link => {
+link.addEventListener('click', e => {
+e.preventDefault();
+document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+});
+});
+
+// Testimonial slider
+let index=0;
+const testimonials=document.querySelectorAll('.testimonial');
+function showTestimonial(i){ testimonials.forEach((t,j)=>t.style.display=j===i?'block':'none'); }
+showTestimonial(index);
+setInterval(()=>{ index=(index+1)%testimonials.length; showTestimonial(index); },5000);
+
+// Parallax layers scroll
+window.addEventListener('scroll', () => {
+const scrollTop = window.pageYOffset;
+document.getElementById('layer1').style.transform = `translateY(${scrollTop*0.2}px) scale(2)`;
+document.getElementById('layer2').style.transform = `translateY(${scrollTop*0.5}px)`;
+});
+</script>
+
+</body>
+</html>
